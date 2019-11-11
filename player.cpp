@@ -46,8 +46,18 @@ using namespace std;
 
     Card Player::removeCardFromHand(Card c) {
         for(int i = 0; i < myHand.size(); i++)
-            if (c == myHand[i])
+            if (c == myHand[i]) {
                 myHand.erase(myHand.begin() + i);
+            }
+        return c;
+    }
+
+    Card Player::removeCardFromHand(int rank, Card c) {
+        for(int i = 0; i < myHand.size(); i++)
+            if (myHand[i].getRank() == rank) {
+                c = myHand[i];
+                myHand.erase(myHand.begin() + i);
+            }
         return c;
     }
 
