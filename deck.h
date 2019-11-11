@@ -31,7 +31,7 @@ class Deck
     int size() const; // # cards left in the deck
 
   private:
-    Card myCards[SIZE];
+    Card myCards[SIZE];         //Array of cards in the deck
     int myIndex;  // current card to deal
 };
 

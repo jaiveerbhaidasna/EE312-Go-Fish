@@ -10,6 +10,8 @@
 
 using namespace std;
 
+    //Default constructor which creates a deck of 52 cards, seeds a random number generator for shuffling, and sets
+    //the index of where to deal from as the top card
     Deck::Deck(){
         unsigned int currentTime =  (unsigned)time(0);
         srand(currentTime);
@@ -23,15 +25,18 @@ using namespace std;
         myIndex = 0;
     }
 
+    //Returns the number of cards remaining in the deck
     int Deck::size() const {
         return SIZE - myIndex;
     }
 
+    //Deals a card to the caller from the top of the deck if there are cards remaining
     Card Deck::dealCard() {
         myIndex++;
         return myCards[myIndex-1];
     }
 
+    //Uses a random number generator to shuffle the deck of cards
     void Deck::shuffle() {
         int numCards = size();
         int rand1 = 0, rand2 = 0;

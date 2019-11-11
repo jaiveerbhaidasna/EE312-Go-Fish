@@ -35,7 +35,7 @@ class Card
     
     Card();          // default, ace of spades
 
-    Card(int rank, Suit s);
+    Card(int rank, Suit s);                //Overloaded constructor
 
     string toString()              const;  // return string version e.g. Ac 4h Js
     bool sameSuitAs(const Card& c) const;  // true if suit same as c
@@ -44,8 +44,8 @@ class Card
     string rankString(int r)       const;  // return "A", "2", ..."Q"
     
     
-    bool operator == (const Card& rhs) const;
-    bool operator != (const Card& rhs) const;
+    bool operator == (const Card& rhs) const;       //Overloaded equals operator
+    bool operator != (const Card& rhs) const;       //Overloaded not equals operator
 
   private:
     int myRank;

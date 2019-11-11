@@ -16,18 +16,20 @@ using namespace std;
 class Player
 {
   public:
-    Player();
+    Player();                   //Default construcdtor
 
+    //Overloaded constructor to give a name to a player
     Player(string name) {
        myName = name;
     }
 
+    //Get method which returns the name of a given player
     string getName() const {
        return myName;
     }
     
     void addCard(Card c);  //adds a card to the hand
-    void bookCards(Card c1, Card c2);
+    void bookCards(Card c1, Card c2);   //Books two cards and adds them to the Player's books
 
     //OPTIONAL
     // comment out if you decide to not use it
@@ -50,14 +52,16 @@ class Player
     
     //Remove the card c from the hand and return it to the caller
     Card removeCardFromHand(Card c);
-    Card removeCardFromHand(int rank, Card c);
     
-    string showHand() const; 
-    string showBooks() const; 
-    
+    string showHand() const;                //Displays the cards in hand of a given player
+    string showBooks() const;               //Displays the books of a given player
+
+    //Returns the number of cards in a given player's hand
     int getHandSize() const{
         return myHand.size();
     }
+
+    //Returns the number of books a given player has
     int getBookSize() const{
         return myBook.size()/2;
     };
